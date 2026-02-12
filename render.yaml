@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: zoho-books-agent
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: EMBEDDINGS_MODEL
+        value: models/gemini-embedding-001

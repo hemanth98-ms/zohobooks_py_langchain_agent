@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+db/
+check_dims.py
+check_schema.py
+list_models.py
+test_db_only.py
+*.zip
